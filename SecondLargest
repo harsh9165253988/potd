@@ -1,0 +1,26 @@
+//GfG
+class Solution {
+    int print2largest(int arr[], int n) {
+        Arrays.sort(arr);
+        int duplicate=-1;
+       int  temp=arr[0];
+        
+        for(int i=1;i<n;i++)
+        {
+       
+        {
+            if(temp==arr[i])
+            {
+                arr[i]=duplicate;
+                
+            }
+            else{ temp=arr[i];}
+            
+        }
+        }
+        Arrays.sort(arr);
+        if(arr[n-2]!=duplicate)
+        return arr[n-2];
+        else return -1;
+    }
+}
