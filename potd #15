@@ -1,0 +1,44 @@
+//1. Two Sum Leetcode
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int temp[]=new int[2];
+        for(int i=0;i<nums.length; i++)
+        {
+            for(int j=i+1;j<nums.length;j++)
+            {
+                if(nums[i]+nums[j]==target)
+                {
+                    temp[0]=i;
+                    temp[1]=j;
+                    break;
+                    
+                    
+                }
+            }
+        }
+        return temp;
+    }
+}
+
+
+//2697. Lexicographically Smallest Palindrome Leetcode
+
+
+class Solution {
+    public String makeSmallestPalindrome(String s) {
+        int start=0;
+        int end=s.length()-1;
+        StringBuilder n=new StringBuilder(s);
+        while(start<=end)
+        {
+            if(s.charAt(start)>s.charAt(end))
+            n.setCharAt(start,s.charAt(end));
+             else if(s.charAt(start)<s.charAt(end))
+            n.setCharAt(end,s.charAt(start));
+            start++;
+            end--;
+        }
+        return n.toString();
+        
+    }
+}
