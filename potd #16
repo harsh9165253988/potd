@@ -1,0 +1,43 @@
+//905. Sort Array By Parity Leetcode
+class Solution {
+    public int[] sortArrayByParity(int[] nums) {
+        int start=0;
+        int end=nums.length-1;
+        while(start<end)
+        {
+            if(nums[start]%2!=0&&nums[end]%2==0)
+            {
+                int temp=nums[start];
+                nums[start]=nums[end];
+                nums[end]=temp;
+                start++;
+                end--;
+            }
+            else if(nums[start]%2!=0&&nums[end]%2!=0)
+            {
+                end--;
+                
+            }
+            else
+            start++; }
+         return nums;
+         }
+}
+
+//1877. Minimize Maximum Pair Sum in Array Leetcode
+class Solution {
+    public int minPairSum(int[] nums) {
+        Arrays.sort(nums);
+        int start=0;
+        int end=nums.length-1;
+       int max=nums[start]+nums[end];
+        while(start<=end)
+        {start++;
+        end--;
+            if(max<nums[start]+nums[end])
+            max=nums[start]+nums[end];
+        }
+        return max;
+        
+    }
+}
