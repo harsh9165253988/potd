@@ -1,0 +1,35 @@
+2269. Find the K-Beauty of a Number   //Leetcode
+
+class Solution {
+    public int divisorSubstrings(int num, int k) {
+     int count=0;
+      String s=Integer.toString(num);
+      StringBuilder sb=new StringBuilder();
+      for(int i=0;i<k;i++)
+      {
+        sb.append(s.charAt(i));
+      }
+      String n=sb.toString();
+      int sum=Integer.parseInt(n);
+       
+      if(num%sum==0)
+      count++;
+      for(int j=k;j<s.length();j++)
+      { sb.deleteCharAt(0);
+      sb.append(s.charAt(j));
+      n=sb.toString();
+        sum=Integer.parseInt(n);
+        try{
+       if(num%sum==0)
+      count++;}
+      catch(ArithmeticException e){
+
+      }
+
+       
+      }
+      return count;
+
+        
+    }
+}
