@@ -1,0 +1,46 @@
+876. Middle of the Linked List  //Leetcode
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        int count=0;
+        ListNode ptr=head;
+        while(ptr!=null)
+        {
+            ptr=ptr.next;
+            count++;
+        }
+        for(int i=0;i<count/2;i++)
+        {
+        head=head.next;
+        }
+        
+       return head; 
+    }
+}
+
+
+237. Delete Node in a Linked List   //leetcode
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public void deleteNode(ListNode node) {
+        node.val=node.next.val;
+        node.next=node.next.next;
+
+ }
+}
